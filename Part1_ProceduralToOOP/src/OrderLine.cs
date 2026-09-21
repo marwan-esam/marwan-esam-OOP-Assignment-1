@@ -17,4 +17,9 @@ public class OrderLine
 
     Product = product;
   }
+
+  public override string ToString()
+  {
+    return $"- {Product.Name}  x{Quantity}  @{Product.Price:F2} = {LineTotal:F2}";
+  }
 }
