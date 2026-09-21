@@ -1,8 +1,6 @@
 using System.Diagnostics.Contracts;
 
 namespace Part2_HotelReservationSystem;
-
-public class Reservation {} // temporary
 public class Guest
 {
   private readonly List<Reservation> _reservations;
