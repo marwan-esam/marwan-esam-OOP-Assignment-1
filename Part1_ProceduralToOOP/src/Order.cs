@@ -13,11 +13,11 @@ public class Order
   public List<OrderLine> Lines {get; private set;}
   public static decimal VipDiscount {get;} = 0.1m;
 
-  public Order(int id, Customer customer)
+  public Order(int id, Customer customer, DateTime date)
   {
     Id = id;
     Customer = customer;
-    Date = DateTime.Now;
+    Date = date;
     Lines = new List<OrderLine>();
   }
 
@@ -60,8 +60,8 @@ public class Order
     {
       throw new InvalidOperationException("Cannot pay an already paid Order");
     }
-    IsPaid = true;
     ReduceLinesStock();
+    IsPaid = true;
     return CalculateTotal();
   }
 
