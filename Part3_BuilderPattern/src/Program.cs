@@ -4,8 +4,8 @@ public class Program
 {
   public static void Main(string[] args)
   {
-    Invoice.Builder invoiceBuilder = new Invoice.Builder();
-    Invoice invoice = invoiceBuilder
+    Invoice_Task32.Builder invoiceBuilder = new Invoice_Task32.Builder();
+    Invoice_Task32 invoice = invoiceBuilder
     .AddAddressCity("Aswan")
     .AddAddressCountry("Egypt")
     .AddAddressState("Aswan")

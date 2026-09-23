@@ -7,3 +7,10 @@ Furthermore, this introduces a massive risk of **mistakenly interchanging parame
 
 ## Question 2: Is this purely a "constructor is too long" problem, or a deeper design issue?
 This is a deeper design issue known as the **"Data Clumps"** or **"Primitive Obsession"** code smell. Putting 20 loosely related properties directly onto a single `Invoice` class violates the Single Responsibility Principle. A much better architectural approach is to group related fields into their own cohesive classes (for example, extracting the street, city, state, and zip code into a dedicated `Address` class), and then composing the `Invoice` out of those smaller classes.
+
+# Task 3.3: Refactor Into Smaller, Composed Builders
+
+## Why is this composed version better than the single big builder from Task 3.2?
+Having separate builders for every logically related block of data strongly advocates for **code reusability**. It gives the development team the flexibility to take a module (like the `Address.Builder`) and reuse it anywhere else in the project (for example, building a `Customer` profile or a `Supplier` record). 
+
+Additionally, it adheres to the **Single Responsibility Principle**. If the business rules for validating a Zip Code ever change, you only need to update the `Address` builder, rather than digging through a giant 20-property `Invoice` builder. It keeps the codebase modular, maintainable, and highly organized.
